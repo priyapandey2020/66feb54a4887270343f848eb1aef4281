@@ -1,7 +1,11 @@
 //name spacing
 const Engine = Matter.Engine;
-const World= Matter.World;
+const World = Matter.World;
 const Bodies = Matter.Bodies;
+const Body = Matter.Body;
+
+// Only for debugging code, is this needed, not otherwise
+//const Render = Matter.Render;
 
 var myengine,myworld;
 var ground, ball;
@@ -40,11 +44,11 @@ function setup(){
 
     var box3_options ={
         isStatic: true,
-        angle:PI/7
+        angle:-Math.PI/4
         
     }
     box3 = Bodies.rectangle(600,330,100,20,box3_options);
-    Matter.Body.setAngle(box3,130)
+    //Matter.Body.setAngle(box3,130)
     World.add(myworld,box3);
 
 
@@ -55,8 +59,21 @@ function setup(){
 
     ball = Bodies.circle(560,100,20, ball_options);
     World.add(myworld,ball);
+    
 
-    console.log(ball);
+    // Only for debugging code, is this needed, not otherwise
+    /*var render = Render.create({
+      element: document.body,
+      engine: myengine,
+      options: {
+        width: 1600,
+        height: 700,
+        wireframes: false
+      }
+    });
+    Render.run(render);*/
+
+    //console.log(ball);
 }
 
 function draw(){
@@ -73,7 +90,7 @@ function draw(){
     fill("yellow")
     push();
     translate(box3.position.x,box3.position.y);
-    rotate(box3.angle);
+    rotate(-45);
     rectMode(CENTER);
     rect(0, 0, 100, 20);
     pop();
