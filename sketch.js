@@ -16,7 +16,7 @@ function setup(){
     myengine = Engine.create();
     myworld = myengine.world;
 
-    //JSON
+    //Code for brown ground
     var ground_options ={
         isStatic: true,
       
@@ -25,39 +25,42 @@ function setup(){
     World.add(myworld,ground);
     console.log(ground);
 
-
+    // Code for red box
     var box1_options ={
         isStatic: false,
         restitution:0,
     }
+
     box1 = Bodies.rectangle(200,360,100,40,box1_options);
     World.add(myworld,box1);
 
-
+    // Code for green box
     var box2_options ={
         isStatic: true,
         
     }
+
     box2 = Bodies.rectangle(450,320,50,140,box2_options);
     World.add(myworld,box2);
 
-
+    // Code for yellow box
     var box3_options ={
         isStatic: true,
         angle:-Math.PI/4
         
     }
+
     box3 = Bodies.rectangle(600,330,100,20,box3_options);
     //Matter.Body.setAngle(box3,130)
     World.add(myworld,box3);
 
-
+    // Code for ball
     var ball_options ={
         isStatic: false,
-        restitution: 1.7
+        restitution: 1.3
     }
 
-    ball = Bodies.circle(560,100,20, ball_options);
+    ball = Bodies.circle(550,100,20, ball_options);
     World.add(myworld,ball);
     
 
@@ -80,6 +83,7 @@ function draw(){
     background("lightgreen");
     Engine.update(myengine);
     rectMode(CENTER);
+    
     fill("brown")
     rect(ground.position.x,ground.position.y,800,20);
     fill("red")
