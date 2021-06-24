@@ -3,7 +3,9 @@ const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
-const Render = Matter.Render;
+
+// Only for debugging code, is this needed, not otherwise
+//const Render = Matter.Render;
 
 var myengine,myworld;
 var ground, ball;
@@ -57,7 +59,10 @@ function setup(){
 
     ball = Bodies.circle(560,100,20, ball_options);
     World.add(myworld,ball);
-    var render = Render.create({
+    
+
+    // Only for debugging code, is this needed, not otherwise
+    /*var render = Render.create({
       element: document.body,
       engine: myengine,
       options: {
@@ -66,9 +71,9 @@ function setup(){
         wireframes: false
       }
     });
-    Render.run(render);
+    Render.run(render);*/
 
-    console.log(ball);
+    //console.log(ball);
 }
 
 function draw(){
