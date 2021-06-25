@@ -5,7 +5,7 @@ const Bodies = Matter.Bodies;
 const Body = Matter.Body;
 
 // Only for debugging code, is this needed, not otherwise
-const Render = Matter.Render;
+// const Render = Matter.Render;
 
 var myengine,myworld;
 var ground, ball;
@@ -63,16 +63,16 @@ function setup(){
     
 
     // Only for debugging code, is this needed, not otherwise
-    var render = Render.create({
-      element: document.body,
-      engine: myengine,
-      options: {
-        width: 1600,
-        height: 700,
-        wireframes: false
-      }
-    });
-    Render.run(render);
+    // var render = Render.create({
+    //   element: document.body,
+    //   engine: myengine,
+    //   options: {
+    //     width: 1600,
+    //     height: 700,
+    //     wireframes: false
+    //   }
+    // });
+    // Render.run(render);
 
     //console.log(ball);
 }
