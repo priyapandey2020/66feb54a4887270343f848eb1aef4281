@@ -5,7 +5,7 @@ const Bodies = Matter.Bodies;
 const Body = Matter.Body;
 
 // Only for debugging code, is this needed, not otherwise
-//const Render = Matter.Render;
+const Render = Matter.Render;
 
 var myengine,myworld;
 var ground, ball;
@@ -44,26 +44,26 @@ function setup(){
     // Code for yellow box
     var yellowBox_options ={
         isStatic: true,
-        angle:-Math.PI/4
+        angle:-60
         
     }
 
-    yellowBox = Bodies.rectangle(600,320,50,140,yellowBox_options);
-    //Matter.Body.setAngle(box3,130)
+    yellowBox = Bodies.rectangle(590,320,100,20,yellowBox_options);
+    // Matter.Body.setAngle(yellowBox,130)
     World.add(myworld,yellowBox);
 
     // Code for ball
     var ball_options ={
         isStatic: false,
-        restitution: 1.5
+        restitution: 1.3
     }
 
-    ball = Bodies.circle(550,100,20, ball_options);
+    ball = Bodies.circle(570,100,20, ball_options);
     World.add(myworld,ball);
     
 
     // Only for debugging code, is this needed, not otherwise
-    /*var render = Render.create({
+    var render = Render.create({
       element: document.body,
       engine: myengine,
       options: {
@@ -72,7 +72,7 @@ function setup(){
         wireframes: false
       }
     });
-    Render.run(render);*/
+    Render.run(render);
 
     //console.log(ball);
 }
