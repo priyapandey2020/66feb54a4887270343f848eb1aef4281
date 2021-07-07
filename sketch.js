@@ -30,7 +30,7 @@ function setup(){
         isStatic: true,
     }
 
-    redBox = Bodies.rectangle(230,320,100,120,redBox_options);
+    redBox = Bodies.rectangle(270,320,100,120,redBox_options);
     World.add(myworld,redBox);
 
     // Code for green box
@@ -38,7 +38,7 @@ function setup(){
         isStatic: true,
     }
 
-    greenBox = Bodies.rectangle(360,320,100,120,greenBox_options);
+    greenBox = Bodies.rectangle(390,320,100,120,greenBox_options);
     World.add(myworld,greenBox);
 
     // Code for yellow box
